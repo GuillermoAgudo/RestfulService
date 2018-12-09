@@ -11,13 +11,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/itinerate")
 @Api(value = "cities",tags = "Itinerate API")
 public class ServiceController {
+
     @Autowired
     CityService cityService;
 
@@ -27,6 +27,4 @@ public class ServiceController {
 
         return new ResponseEntity<List<CityDTO>>(cityService.getCities(), HttpStatus.OK);
     }
-
-
 }

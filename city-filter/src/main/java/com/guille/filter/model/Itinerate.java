@@ -1,10 +1,10 @@
 package com.guille.filter.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.ArrayList;
 import java.util.List;
-//@JsonIgnoreProperties(value = { "time" })
+
+@JsonIgnoreProperties(value = { "time" })
 public class Itinerate {
 
     private List<String> citiesItinerate  = new ArrayList<>();
@@ -12,6 +12,7 @@ public class Itinerate {
     private float time ;
 
     public List<String> getCitiesItinerate() {
+
         return citiesItinerate;
     }
 

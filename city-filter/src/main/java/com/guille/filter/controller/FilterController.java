@@ -1,7 +1,5 @@
 package com.guille.filter.controller;
 
-
-import com.guille.filter.model.City;
 import com.guille.filter.model.Itinerate;
 import com.guille.filter.service.FilterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 @RestController
@@ -26,6 +23,7 @@ public class FilterController {
     public ResponseEntity<List<Itinerate>> getConection(@RequestParam(value = "city") String city) throws Exception{
 
             filterService.getAllItinerates(city);
+
             return new ResponseEntity<List<Itinerate>>(filterService.getBestConection(), HttpStatus.OK);
     }
 
@@ -33,7 +31,7 @@ public class FilterController {
     public ResponseEntity<List<Itinerate>> getTime(@RequestParam (value = "city") String city) throws Exception{
 
             filterService.getAllItinerates(city);
+
             return new ResponseEntity<List<Itinerate>>(filterService.getBestTime(), HttpStatus.OK);
     }
-
 }

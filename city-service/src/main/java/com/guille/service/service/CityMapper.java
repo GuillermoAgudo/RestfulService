@@ -11,6 +11,7 @@ public class CityMapper extends ConfigurableMapper {
 
     @Override
     protected void configure(MapperFactory factory) {
+
         factory.classMap(City.class, CityDTO.class).byDefault().register();
     }
 }
