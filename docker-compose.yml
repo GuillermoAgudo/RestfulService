@@ -1,0 +1,15 @@
+version: '3'
+services:
+  city-filter:
+    build: ./city-filter
+    ports:
+      - "9091:9091"
+
+  city-service:
+    build: ./city-service
+    ports:
+      - "9090:9090"
+    links:
+      - city-filter
+
+
